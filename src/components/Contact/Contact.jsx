@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import css from "./Contact.module.css"
+import { ContactItem, ContactButton } from './Contact.styled';
 
 export const Contact = ({id, name, number}) => {
     return (
-        <li>
-        {name}: {number}
-        <button className={css.button} type="button" data-id={id}>Delete</button>
-      </li>  
+        <ContactItem>
+            {name}: {number}
+            <ContactButton type="button" data-id={id}>Delete</ContactButton>
+        </ContactItem>
     )
 }
 

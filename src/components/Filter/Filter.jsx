@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
-import css from "./Filter.module.css"
-export const Filter = ({id, filter, addFilter}) => {
+import { FilterWrapper, Label, Input } from './Filter.styled';
+
+export const Filter = ({filter, findContact}) => {
     return (
-        <div>
-          <label htmlFor={id}>Find contacts by name</label>
-          <input className={css.input}
-          id={id}
+        <FilterWrapper>
+             <Label htmlFor="filter">Find contacts by name</Label>
+          <Input
+          id="filter"
           type="text"
           name="filter"
           value={filter}
-          onInput={addFilter}
+          onInput={findContact}
         />
-        </div>
+        </FilterWrapper>
     )
 }
 
 Filter.propTypes = {
-    id: PropTypes.string.isRequired,
-    filter: PropTypes.string,
-    addFilter: PropTypes.func  
+    filter: PropTypes.string.isRequired,
+    findContact: PropTypes.func.isRequired  
+
 }
