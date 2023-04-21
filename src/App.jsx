@@ -35,9 +35,9 @@ export class App  extends Component {
     this.setState({filter: event.target.value.toLowerCase()})
   }
 
- deleteContact = (event) => {
+ deleteContact = (id) => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(value => value.id !== event.target.dataset.id)
+      contacts: prevState.contacts.filter(value => value.id !== id)
     }))
     
   }
